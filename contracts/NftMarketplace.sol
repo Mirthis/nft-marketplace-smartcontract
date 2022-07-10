@@ -44,7 +44,7 @@ contract NftMarketplace is ReentrancyGuard {
     uint256 price
   );
 
-  event ItemCanceled(
+  event ItemCancelled(
     address indexed seller,
     address indexed nftAddress,
     uint256 indexed tokenId
@@ -150,7 +150,7 @@ contract NftMarketplace is ReentrancyGuard {
     isListed(nftAddress, tokenId)
   {
     delete (s_listings[nftAddress][tokenId]);
-    emit ItemCanceled(msg.sender, nftAddress, tokenId);
+    emit ItemCancelled(msg.sender, nftAddress, tokenId);
   }
 
   /*
