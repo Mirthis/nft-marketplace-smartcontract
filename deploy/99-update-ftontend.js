@@ -5,6 +5,7 @@ require("dotenv").config();
 
 const frontEndConstantsFile =
   "../nft-marketplace-frontend-moralis/constants/networkMapping.json";
+const frontEndAbiLocation = "../nft-marketplace-frontend-moralis/constants/";
 
 module.exports = async function () {
   const updateContractAddresses = async () => {
@@ -31,9 +32,24 @@ module.exports = async function () {
     fs.writeFileSync(frontEndConstantsFile, JSON.stringify(contractAddresses));
   };
 
+  const updateABI = async () => {
+    const nftMarketplace = await ethers.getContract("NftMarketplace");
+    fs.writeFileSync(
+      `${frontEndAbiLocation}NftMarketplace.json`,
+      nftMarketplace.interface.format(ethers.utils.FormatTypes.json)
+    );
+
+    const basicNft = await ethers.getContract("BasicNft");
+    fs.writeFileSync(
+      `${frontEndAbiLocation}BasicNft.json`,
+      basicNft.interface.format(ethers.utils.FormatTypes.json)
+    );
+  };
+
   if (process.env.UPDATE_FRONT_END) {
     console.log("updating frontend...");
     await updateContractAddresses();
+    await updateABI();
   }
 };
 

@@ -145,7 +145,7 @@ const { developmentChains } = require("../../helper-hardhat-config");
         it("emit an event", async () => {
           await expect(
             nftMarketplace.cancelListing(basicNft.address, TOKEN_ID)
-          ).to.emit(nftMarketplace, "ItemCanceled");
+          ).to.emit(nftMarketplace, "ItemCancelled");
         });
 
         it("revert if item is not listed", async () => {
