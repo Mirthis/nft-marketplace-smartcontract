@@ -9,7 +9,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   const { deployer } = await getNamedAccounts();
 
   const args = [];
-  const basicNft = await deploy("NftMarketplace", {
+  const nftMarketplace = await deploy("NftMarketplace", {
     from: deployer,
     args: [],
     log: true,
@@ -21,7 +21,8 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     process.env.ETHERSCAN_API_KEY
   ) {
     console.log("Verifying...");
-    await verify(basicNft.address, args);
+    await verify(nftMarketplace.address, args);
+    // await verify("0xb89B380be2601829E69a0AB63101A2A4766c", args);
   }
   console.log("------ Completed NftMarketplace deployment script");
 };

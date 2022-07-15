@@ -22,6 +22,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   ) {
     console.log("Verifying...");
     await verify(basicNft.address, args);
+    // await verify("0x93E4FF4c96e8221E4b4992CA6C8883fe61b3FC7C", args);
   }
   console.log("------ Completed BasicNft deployment script");
 };

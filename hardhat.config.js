@@ -38,7 +38,7 @@ module.exports = {
     },
     rinkeby: {
       chainId: 4,
-      blockConfirmation: 10,
+      blockConfirmations: 10,
       url: RINKEBY_RPC_URL,
       accounts: [PRIVATE_KEY],
     },
