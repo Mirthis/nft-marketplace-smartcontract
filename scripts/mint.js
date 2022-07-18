@@ -12,7 +12,7 @@ const mint = async () => {
     `Nft minted with token id ${tokenId}, address: ${basicNft.address}`
   );
 
-  if ((network.config.chainId = 31337)) {
+  if (network.config.chainId === 31337) {
     await moveBlocks(2, 1000);
   }
 };

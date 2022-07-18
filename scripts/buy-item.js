@@ -17,7 +17,7 @@ const cancelItem = async () => {
   await tx.wait(1);
   console.log("Item bought!");
 
-  if ((network.config.chainId = 31337)) {
+  if (network.config.chainId === 31337) {
     await moveBlocks(2, 1000);
   }
 };

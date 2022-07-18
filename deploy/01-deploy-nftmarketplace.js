@@ -22,7 +22,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   ) {
     console.log("Verifying...");
     await verify(nftMarketplace.address, args);
-    // await verify("0xb89B380be2601829E69a0AB63101A2A4766c", args);
+    //await verify("0xb89B380be2601829E69a0AB63101A2A4766c", args);
   }
   console.log("------ Completed NftMarketplace deployment script");
 };

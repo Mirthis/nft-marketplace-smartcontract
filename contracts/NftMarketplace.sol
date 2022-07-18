@@ -45,7 +45,7 @@ contract NftMarketplace is ReentrancyGuard {
   );
 
   event ItemCancelled(
-    address indexed seller,
+    address indexed buyer,
     address indexed nftAddress,
     uint256 indexed tokenId
   );
